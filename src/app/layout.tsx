@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   title: "LaunchNow — Smarter Launchpad for macOS",
   description:
     "LaunchNow streamlines the macOS Launchpad with customizable grids, organized settings, and secure backups.",
+  icons: {
+    icon: "/icon/64.png",
+    shortcut: "/icon/64.png",
+    apple: "/icon/64.png",
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${jetBrainsMono.variable} bg-[var(--launch-surface)] text-slate-900 antialiased`}
+        className={`${inter.variable} ${jetBrainsMono.variable} bg-[var(--launch-surface)] text-black antialiased`}
       >
         {children}
       </body>
