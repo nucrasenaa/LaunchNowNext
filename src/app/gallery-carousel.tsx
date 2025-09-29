@@ -1,6 +1,5 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 type Slide = {
@@ -18,39 +17,33 @@ const slides: Slide[] = [
 
 export default function GalleryCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
-
-  const goToSlide = (nextIndex: number, nextDirection: number) => {
-    setDirection(nextDirection);
-    setActiveIndex(nextIndex);
-  };
 
   const handleChange = (move: "prev" | "next") => {
     if (move === "prev") {
-      const nextIndex = activeIndex === 0 ? slides.length - 1 : activeIndex - 1;
-      goToSlide(nextIndex, -1);
+      setActiveIndex((current) => (current === 0 ? slides.length - 1 : current - 1));
     } else {
-      const nextIndex = activeIndex === slides.length - 1 ? 0 : activeIndex + 1;
-      goToSlide(nextIndex, 1);
+      setActiveIndex((current) => (current === slides.length - 1 ? 0 : current + 1));
     }
   };
+
+  const translateValue = `translateX(-${activeIndex * 100}%)`;
 
   return (
     <div className="flex w-full flex-col items-center gap-6">
       <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[32px] border border-[var(--launch-border)] bg-white shadow-[0_30px_60px_rgba(15,23,42,0.08)]">
-        <AnimatePresence initial={false} custom={direction}>
-          <motion.img
-            key={slides[activeIndex].src}
-            src={slides[activeIndex].src}
-            alt={slides[activeIndex].alt}
-            custom={direction}
-            initial={{ x: direction >= 0 ? 80 : -80, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: direction >= 0 ? -80 : 80, opacity: 0 }}
-            transition={{ duration: 0.45, ease: "easeOut" }}
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-        </AnimatePresence>
+        <div
+          className="flex h-full w-full transition-transform duration-500 ease-out"
+          style={{ transform: translateValue }}
+        >
+          {slides.map((slide) => (
+            <img
+              key={slide.src}
+              src={slide.src}
+              alt={slide.alt}
+              className="h-full w-full flex-shrink-0 object-cover"
+            />
+          ))}
+        </div>
         <button
           type="button"
           onClick={() => handleChange("prev")}
@@ -97,7 +90,7 @@ export default function GalleryCarousel() {
             <button
               key={slide.src}
               type="button"
-              onClick={() => goToSlide(index, index > activeIndex ? 1 : -1)}
+              onClick={() => setActiveIndex(index)}
               className={`h-2 w-8 rounded-full transition-all duration-300 ${
                 isActive ? "bg-slate-900" : "bg-slate-200 hover:bg-slate-300"
               }`}
