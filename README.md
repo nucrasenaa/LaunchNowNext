@@ -1,4 +1,4 @@
-# LaunchNow Landing Page
+# [LaunchNow Landing Page](https://launchnow.gooxsoft.com/)
 
 Beautiful marketing site for the macOS Launchpad utility [LaunchNow](https://github.com/nucrasenaa/LaunchNow). Built with Next.js 15 (App Router) and Tailwind CSS to showcase the product, highlight key features, and provide direct download access.
 
