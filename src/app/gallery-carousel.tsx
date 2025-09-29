@@ -8,11 +8,16 @@ type Slide = {
 };
 
 const slides: Slide[] = [
-  { src: "/image/0.png", alt: "LaunchNow home view" },
-  { src: "/image/1.png", alt: "LaunchNow grid customization" },
-  { src: "/image/2.png", alt: "LaunchNow settings overview" },
-  { src: "/image/3.png", alt: "LaunchNow app management" },
+  { src: "/image/0.png", alt: "LaunchNow command center overview" },
+  { src: "/image/1.png", alt: "LaunchNow workspace customization" },
+  { src: "/image/2.png", alt: "LaunchNow automation builder" },
+  { src: "/image/3.png", alt: "LaunchNow app management suite" },
   { src: "/image/4.png", alt: "LaunchNow backup workflow" },
+  { src: "/image/5.png", alt: "LaunchNow analytics dashboard" },
+  { src: "/image/6.png", alt: "LaunchNow release timeline" },
+  { src: "/image/7.png", alt: "LaunchNow team collaboration" },
+  { src: "/image/8.png", alt: "LaunchNow notification center" },
+  { src: "/image/9.png", alt: "LaunchNow mobile launch preview" },
 ];
 
 export default function GalleryCarousel() {
