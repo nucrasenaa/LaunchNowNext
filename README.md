@@ -18,6 +18,6 @@ Beautiful marketing site for the macOS Launchpad utility [LaunchNow](https://git
 
 ## Credits
 
-- Original macOS application: [LaunchNow by nucrasenaa](https://github.com/nucrasenaa/LaunchNow)
+- Original macOS application: [LaunchNow by nucrasenaa](https://github.com/nucrasenaa/LaunchNow) Forked from ggkevinnnn/LaunchNow – Alternative Launchpad application for macOS Tahoe.
 - Landing page design and implementation: this repository
 
