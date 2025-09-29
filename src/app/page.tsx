@@ -159,7 +159,7 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a
-              href="https://github.com/nucrasenaa/LaunchNow/releases/download/1.3.8/LaunchNow.1.3.8.dmg"
+              href="https://github.com/nucrasenaa/LaunchNow/releases/tag/1.4.0"
               className="inline-flex h-11 items-center justify-center rounded-full bg-slate-900 px-6 text-sm font-medium text-white shadow-[0_14px_24px_rgba(15,23,42,0.18)] transition hover:bg-slate-800"
             >
               Download
@@ -223,7 +223,9 @@ export default function Home() {
 
       <section className="flex flex-col items-center gap-6">
         <div className="text-center">
-          <h2 className="text-2xl font-semibold text-black">LaunchNow Gallery</h2>
+          <h2 className="text-2xl font-semibold text-black">
+            LaunchNow Gallery
+          </h2>
           <p className="mt-2 text-sm text-black">
             A quick look at the polished views you can expect inside the app.
           </p>
@@ -263,11 +265,7 @@ export default function Home() {
           </a>
           <span className="text-black">•</span>
           <a className="hover:text-black" href="#">
-            Version 0.9.1 beta
-          </a>
-          <span className="text-black">•</span>
-          <a className="hover:text-black" href="#">
-            Credits
+            Version 1.4.0 beta
           </a>
         </div>
       </footer>
