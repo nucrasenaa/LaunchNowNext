@@ -9,7 +9,8 @@
     "lint": "next lint",
     "passenger:start": "passenger start --app-type node --startup-file index.ts",
     "passenger:stop": "passenger stop",
-    "port:check": "lsof -i :3000"
+    "port:check": "lsof -i :3000",
+    	"kill": "kill 3975664"
   },
   "dependencies": {
     "react": "19.1.0",
