@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint",
+    "passenger:start": "passenger start --app-type node --startup-file index.ts",
+    "passenger:stop": "passenger stop",
+    "port:check": "lsof -i :3000"
   },
   "dependencies": {
     "react": "19.1.0",
