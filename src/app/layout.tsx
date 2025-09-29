@@ -18,7 +18,7 @@ const title = "LaunchNow — Smarter Launchpad for macOS";
 const description =
   "LaunchNow streamlines the macOS Launchpad with customizable grids, organized settings, and secure backups.";
 const url = "https://launchnow.app";
-const ogImage = "/image/0.png";
+const ogImage = "https://launchnow.gooxsoft.com/image/0.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     images: [ogImage],
   },
   icons: {
-    icon: "/icon/64.png",
-    shortcut: "/icon/64.png",
-    apple: "/icon/64.png",
+    icon: "https://launchnow.gooxsoft.com/icon/64.png",
+    shortcut: "https://launchnow.gooxsoft.com/icon/64.png",
+    apple: "https://launchnow.gooxsoft.com/icon/64.png",
   },
 };
 
