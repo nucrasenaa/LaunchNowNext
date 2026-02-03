@@ -10,12 +10,12 @@
     "passenger:start": "passenger start --app-type node --startup-file index.ts",
     "passenger:stop": "passenger stop",
     "port:check": "lsof -i :3000",
-    	"kill": "kill 3975664"
+    "kill": "kill 3975664"
   },
   "dependencies": {
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.4"
+    "next": "15.5.9"
   },
   "devDependencies": {
     "typescript": "^5",
