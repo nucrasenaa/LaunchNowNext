@@ -58,29 +58,11 @@ const features: Feature[] = [
   },
 ];
 
-const highlights = [
-  "Version 1.5.2",
-  "macOS 26 Tahoe ready",
-  "No Dock icon required",
-  "DMG and in-app ZIP updater",
-];
-
 export default function Home() {
   return (
     <main className="mx-auto flex min-h-screen max-w-7xl flex-col gap-20 px-5 pb-20 pt-10 sm:px-8 md:gap-24 md:pt-16">
       <section className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
         <div className="flex flex-col gap-8">
-          <div className="flex flex-wrap gap-2">
-            {highlights.map((item) => (
-              <span
-                key={item}
-                className="rounded-md border border-[var(--launch-border)] bg-white px-3 py-1 text-xs font-medium text-slate-700"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-
           <div className="flex flex-col gap-5">
             <div className="flex items-center gap-4">
               <Image
