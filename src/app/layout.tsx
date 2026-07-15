@@ -16,9 +16,9 @@ const jetBrainsMono = JetBrains_Mono({
 
 const title = "LaunchNow — Smarter Launchpad for macOS";
 const description =
-  "LaunchNow streamlines the macOS Launchpad with customizable grids, organized settings, and secure backups.";
+  "LaunchNow streamlines macOS app launching with customizable grids, profiles, cloud folder backups, automatic update checks, and safer app management.";
 const url = "https://launchnow.app";
-const ogImage = "https://launchnow.gooxsoft.com/image/0.png";
+const ogImage = "https://launchnow.gooxsoft.com/image/current/launch-now-1.jpg";
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "LaunchNow interface preview",
+        width: 1920,
+        height: 1248,
+        alt: "LaunchNow fullscreen app grid preview",
       },
     ],
   },

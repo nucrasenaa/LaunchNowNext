@@ -1,271 +1,265 @@
-import type { JSX } from "react";
+import Image from "next/image";
 import GalleryCarousel from "./gallery-carousel";
 
 type Feature = {
+  eyebrow: string;
   title: string;
   description: string;
-  icon: JSX.Element;
-  badge?: string;
 };
-
-const iconBase = "h-6 w-6 stroke-[1.5]";
 
 const features: Feature[] = [
   {
-    title: "Native Launchpad Experience",
+    eyebrow: "Layout",
+    title: "A cleaner Launchpad that stays yours",
     description:
-      "Toggle between full-screen and windowed layouts effortlessly.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        className={`${iconBase} text-blue-600`}
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="12" cy="12" r="7.5" />
-        <circle cx="12" cy="12" r="2" className="fill-current" />
-        <path d="M12 4.5v1.5" />
-        <path d="M19.5 12h-1.5" />
-        <path d="M12 18.5v-1.5" />
-        <path d="M6 12H4.5" />
-      </svg>
-    ),
+      "Tune columns, rows, fullscreen spacing, search scope, and scroll sensitivity without touching the real apps on disk.",
   },
   {
-    title: "Seamless with Liquid Glass",
-    description: "Blends with macOS translucency.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        className={`${iconBase} text-blue-600`}
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect x="5" y="6" width="9" height="12" rx="3" />
-        <rect x="10" y="6" width="9" height="12" rx="3" />
-      </svg>
-    ),
+    eyebrow: "Personalization",
+    title: "Rename apps, change icons, and shape folders",
+    description:
+      "Use contextual actions to rename apps or folders, change app and folder icons, reset icons, remove items, and open apps in Finder.",
   },
   {
-    title: "SwiftUI Native",
-    description: "High-performance UI stack.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        className={`${iconBase} text-blue-600`}
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M16 7c-2 3-5.5 4.5-8.5 1.5 1.5 3 3.5 4.5 6 5-2 0-4 .5-5.5 2 3.5 0 6.5-.5 9-4.5 1-1.6 1.5-3.3 1-5" />
-        <circle cx="17.5" cy="6.5" r="1" className="fill-current" />
-      </svg>
-    ),
+    eyebrow: "Appearance",
+    title: "Themes, backgrounds, opacity, and blur",
+    description:
+      "Choose Glass, Dark, Light, Compact, or Classic Launchpad presets, then refine the background image, opacity, and blur.",
   },
   {
-    title: "Customizable Grid Layout",
-    description: "Tailor columns to fit your flow.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        className={`${iconBase} text-blue-600`}
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect x="5" y="5" width="5" height="5" rx="1.5" />
-        <rect x="14" y="5" width="5" height="5" rx="1.5" />
-        <rect x="5" y="14" width="5" height="5" rx="1.5" />
-        <path d="M18 14h-4v5h5v-4" />
-      </svg>
-    ),
+    eyebrow: "Profiles",
+    title: "Save multiple launch setups",
+    description:
+      "Keep Work, Personal, Gaming, or any other layout as profiles you can save, rename, apply, delete, export, and restore.",
   },
   {
-    title: "App Management",
-    description: "Add, remove, and reset effortlessly.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        className={`${iconBase} text-blue-600`}
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect x="4" y="5" width="16" height="14" rx="3" />
-        <path d="M8 10h8" />
-        <path d="M12 14v-4" />
-      </svg>
-    ),
+    eyebrow: "Cloud",
+    title: "Cloud folder backup for profiles",
+    description:
+      "Point LaunchNow at iCloud Drive, Google Drive, Dropbox, OneDrive, or another synced folder for profile backups.",
   },
   {
-    title: "App Settings Backup",
-    description: "Export layouts securely.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        className={`${iconBase} text-blue-600`}
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect x="4" y="5" width="16" height="14" rx="3" />
-        <path d="M8 10h8" />
-        <path d="M12 14v3" />
-        <path d="M12 14 9.5 11.5" />
-        <path d="M12 14l2.5-2.5" />
-      </svg>
-    ),
+    eyebrow: "Updates",
+    title: "Automatic update checks",
+    description:
+      "LaunchNow can check GitHub releases in the background, notify you when a new version is available, and install ZIP updates in-app.",
   },
+  {
+    eyebrow: "Apps",
+    title: "Add, remove, reset, and auto-organize",
+    description:
+      "Search app lists, add apps from custom sources, remove items safely, or group your current apps into category folders.",
+  },
+  {
+    eyebrow: "Languages",
+    title: "Built for multilingual setups",
+    description:
+      "Switch between English, Thai, Japanese, Korean, Simplified Chinese, Spanish, French, German, Portuguese, Indonesian, Vietnamese, or system language.",
+  },
+];
+
+const highlights = [
+  "Version 1.5.2",
+  "macOS 26 Tahoe ready",
+  "No Dock icon required",
+  "DMG and in-app ZIP updater",
 ];
 
 export default function Home() {
   return (
-    <main className="mx-auto flex min-h-screen max-w-6xl flex-col gap-24 px-6 pb-24 pt-20 sm:px-8 md:gap-28 md:pt-24">
-      <section className="flex flex-col items-center gap-12 text-center">
-        <div className="flex flex-col items-center gap-5">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[var(--launch-border)] bg-white px-4 py-1 text-xs font-medium uppercase tracking-[0.3em] text-black">
-            macOS Utility
-          </span>
-          <div className="flex flex-col items-center gap-4">
-            <div className="flex items-center gap-3">
-              <img
+    <main className="mx-auto flex min-h-screen max-w-7xl flex-col gap-20 px-5 pb-20 pt-10 sm:px-8 md:gap-24 md:pt-16">
+      <section className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
+        <div className="flex flex-col gap-8">
+          <div className="flex flex-wrap gap-2">
+            {highlights.map((item) => (
+              <span
+                key={item}
+                className="rounded-md border border-[var(--launch-border)] bg-white px-3 py-1 text-xs font-medium text-slate-700"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex flex-col gap-5">
+            <div className="flex items-center gap-4">
+              <Image
                 src="/icon/64.png"
                 alt="LaunchNow icon"
-                className="h-16 w-16 rounded-2xl border border-[var(--launch-border)] bg-white shadow-[0_12px_24px_rgba(15,23,42,0.08)]"
+                width={64}
+                height={64}
+                className="h-16 w-16 rounded-lg border border-[var(--launch-border)] bg-white shadow-sm"
               />
-              <h1 className="text-5xl font-semibold tracking-tight text-black sm:text-6xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
                 LaunchNow
-              </h1>
+              </p>
             </div>
-            <p className="max-w-2xl text-lg text-black">
-              A smarter, cleaner Launchpad for macOS. Customize the grid, keep
-              settings organised, and glide through your apps with zero
-              friction.
+            <h1 className="max-w-3xl text-5xl font-semibold leading-[1.04] tracking-tight text-slate-950 sm:text-6xl">
+              A modern Launchpad replacement for macOS.
+            </h1>
+            <p className="max-w-2xl text-lg leading-8 text-slate-700">
+              Organize apps, customize your grid, save profiles, back up to a
+              cloud folder, and keep LaunchNow updated from one lightweight
+              macOS-first utility.
             </p>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-4">
+
+          <div className="flex flex-wrap items-center gap-3">
             <a
-              href="https://github.com/nucrasenaa/LaunchNow/releases/tag/1.4.0"
-              className="inline-flex h-11 items-center justify-center rounded-full bg-slate-900 px-6 text-sm font-medium text-white shadow-[0_14px_24px_rgba(15,23,42,0.18)] transition hover:bg-slate-800"
+              href="https://github.com/nucrasenaa/LaunchNow/releases/latest"
+              className="inline-flex h-11 items-center justify-center rounded-md bg-slate-950 px-6 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
             >
-              Download
+              Download Latest
             </a>
             <a
               href="https://github.com/nucrasenaa/LaunchNow"
-              className="inline-flex h-11 items-center justify-center rounded-full border border-[var(--launch-border)] bg-white px-6 text-sm font-medium text-black transition hover:border-slate-300 hover:text-black"
+              className="inline-flex h-11 items-center justify-center rounded-md border border-[var(--launch-border)] bg-white px-6 text-sm font-semibold text-slate-950 transition hover:border-slate-300"
             >
-              GitHub
+              View on GitHub
             </a>
           </div>
         </div>
-        <div className="w-full max-w-3xl">
-          <div className="relative overflow-hidden rounded-[28px] border border-[var(--launch-border)] bg-white shadow-[0_40px_80px_rgba(15,23,42,0.08)]">
-            <img
-              src="/image/0.png"
-              alt="LaunchNow interface preview"
-              className="h-full w-full object-cover"
-            />
-          </div>
+
+        <div className="rounded-lg border border-[var(--launch-border)] bg-white p-2 shadow-[0_28px_80px_rgba(15,23,42,0.12)]">
+          <Image
+            src="/image/current/launch-now-1.jpg"
+            alt="LaunchNow fullscreen app grid with search"
+            width={1920}
+            height={1248}
+            priority
+            className="aspect-[16/10] w-full rounded-md object-cover"
+          />
         </div>
       </section>
 
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200/70 to-transparent" />
-
-      <section className="flex flex-col gap-12">
-        <div className="flex flex-col gap-4 text-left md:flex-row md:items-center md:justify-between">
-          <div className="max-w-xl">
-            <h2 className="text-3xl font-semibold tracking-tight text-black">
-              Key Features
-            </h2>
-            <p className="mt-2 text-base text-black">
-              Everything you need to tame Launchpad again, wrapped in a calm
-              macOS-first design.
-            </p>
-          </div>
+      <section className="grid gap-6 border-y border-[var(--launch-border)] py-10 sm:grid-cols-3">
+        <div>
+          <p className="text-3xl font-semibold text-slate-950">1.5.2</p>
+          <p className="mt-1 text-sm text-slate-600">Latest release</p>
         </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <p className="text-3xl font-semibold text-slate-950">11</p>
+          <p className="mt-1 text-sm text-slate-600">Completed 1.x roadmap features</p>
+        </div>
+        <div>
+          <p className="text-3xl font-semibold text-slate-950">12</p>
+          <p className="mt-1 text-sm text-slate-600">Language choices including system language</p>
+        </div>
+      </section>
+
+      <section className="flex flex-col gap-10">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">
+            Current Functions
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
+            Everything in the app today, not a wishlist.
+          </h2>
+          <p className="mt-3 text-base leading-7 text-slate-700">
+            The website now reflects the LaunchNow 1.5.x feature set: profiles,
+            cloud folder sync, automatic update checks, background customization,
+            search controls, app sources, and safer app management.
+          </p>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {features.map((feature) => (
             <article
               key={feature.title}
-              className="flex h-full flex-col items-center gap-3 rounded-3xl border border-[var(--launch-border)] bg-white p-6 text-center shadow-[0_20px_40px_rgba(15,23,42,0.04)]"
+              className="rounded-lg border border-[var(--launch-border)] bg-white p-5 shadow-sm"
             >
-              <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-slate-200 bg-white shadow-sm">
-                {feature.icon}
-              </span>
-              <div className="flex flex-col items-center gap-1">
-                <h3 className="text-base font-semibold text-black">
-                  {feature.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-black">
-                  {feature.description}
-                </p>
-              </div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                {feature.eyebrow}
+              </p>
+              <h3 className="mt-3 text-lg font-semibold leading-6 text-slate-950">
+                {feature.title}
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                {feature.description}
+              </p>
             </article>
           ))}
         </div>
       </section>
 
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200/70 to-transparent" />
+      <section className="grid items-center gap-8 lg:grid-cols-[1.04fr_0.96fr]">
+        <div className="rounded-lg border border-[var(--launch-border)] bg-white p-2 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+          <Image
+            src="/image/current/launch-now-7.jpg"
+            alt="LaunchNow profiles and cloud backup settings"
+            width={1920}
+            height={1248}
+            className="aspect-[16/10] w-full rounded-md object-cover"
+          />
+        </div>
+        <div className="flex flex-col gap-5">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-700">
+            Data Safety
+          </p>
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
+            Profiles and cloud folder backup are built into Settings.
+          </h2>
+          <p className="text-base leading-7 text-slate-700">
+            Save layouts as profiles, restore them later, and keep a backup in a
+            synced folder. LaunchNow stores profile data separately from your
+            installed apps, so layout experiments stay reversible.
+          </p>
+          <ul className="grid gap-3 text-sm text-slate-700 sm:grid-cols-2">
+            <li className="rounded-md bg-slate-50 p-3">Save and rename profiles</li>
+            <li className="rounded-md bg-slate-50 p-3">Restore from cloud folder</li>
+            <li className="rounded-md bg-slate-50 p-3">Export and import data</li>
+            <li className="rounded-md bg-slate-50 p-3">Backup Now for synced folders</li>
+          </ul>
+        </div>
+      </section>
 
       <section className="flex flex-col items-center gap-6">
-        <div className="text-center">
-          <h2 className="text-2xl font-semibold text-black">
-            LaunchNow Gallery
+        <div className="max-w-2xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
+            Gallery
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
+            Real screenshots from the current app.
           </h2>
-          <p className="mt-2 text-sm text-black">
-            A quick look at the polished views you can expect inside the app.
+          <p className="mt-3 text-sm leading-6 text-slate-700">
+            Browse the app grid, settings, appearance controls, app management,
+            data backup, and update panels from LaunchNow 1.5.2.
           </p>
         </div>
         <GalleryCarousel />
       </section>
 
-      <section className="rounded-[32px] border border-[var(--launch-border)] bg-slate-50 px-8 py-10 text-center shadow-[0_28px_56px_rgba(15,23,42,0.05)] sm:px-12">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-4">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-500">
-            Community First
-          </span>
-          <h2 className="text-2xl font-semibold text-black">
-            LaunchNow, made possible by the community
-          </h2>
-          <p className="text-sm leading-relaxed text-black">
-            This project is a fork of the brilliant work by Kevin on{" "}
-            <a
-              className="font-medium text-blue-600 underline-offset-4 hover:underline"
-              href="https://github.com/ggkevinnnn/LaunchNow"
-            >
-              github.com/ggkevinnnn/LaunchNow
-            </a>
-            . A heartfelt thank you for laying the foundation that makes
-            LaunchNow even better.
-          </p>
+      <section className="rounded-lg border border-[var(--launch-border)] bg-slate-950 px-6 py-10 text-white sm:px-10">
+        <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-400">
+              Ready for macOS
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight">
+              Download LaunchNow 1.5.2.
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">
+              Install with the DMG, then let the built-in updater keep future
+              versions current with automatic checks and in-app ZIP updates.
+            </p>
+          </div>
+          <a
+            href="https://github.com/nucrasenaa/LaunchNow/releases/latest"
+            className="inline-flex h-11 items-center justify-center rounded-md bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
+          >
+            Get the latest release
+          </a>
         </div>
       </section>
 
-      <footer className="border-t border-[var(--launch-border)] pt-8 text-center text-xs text-black">
+      <footer className="border-t border-[var(--launch-border)] pt-8 text-center text-xs text-slate-600">
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <a
-            className="hover:text-black"
-            href="https://github.com/nucrasenaa/LaunchNow"
-          >
+          <a className="hover:text-slate-950" href="https://github.com/nucrasenaa/LaunchNow">
             GitHub
           </a>
-          <span className="text-black">•</span>
-          <a className="hover:text-black" href="#">
-            Version 1.4.0 beta
+          <span>Version 1.5.2</span>
+          <a className="hover:text-slate-950" href="https://github.com/ggkevinnnn/LaunchNow">
+            Original project
           </a>
         </div>
       </footer>
